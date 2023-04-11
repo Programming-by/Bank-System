@@ -458,7 +458,7 @@ public:
         _Value = ReverseWordsInString(_Value);
     }
 
-    static string ReplaceWord(string S1, string StringToReplace, string sRepalceTo, bool MatchCase = true)
+    static string ReplaceString(string S1, string StringToReplace, string sRepalceTo, bool MatchCase = true)
     {
 
         vector<string> vString = Split(S1, " ");
@@ -488,9 +488,9 @@ public:
         return JoinString(vString, " ");
     }
 
-    string ReplaceWord(string StringToReplace, string sRepalceTo)
+    string ReplaceString(string StringToReplace, string sRepalceTo)
     {
-        return ReplaceWord(_Value, StringToReplace, sRepalceTo);
+        return ReplaceString(_Value, StringToReplace, sRepalceTo);
     }
 
     static string RemovePunctuations(string S1)

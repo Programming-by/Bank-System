@@ -106,6 +106,25 @@ private:
 	}
 
 
+	void _Update()
+	{
+		vector <clsBankClient> _vClients;
+		_vClients = _LoadClientsDataFromFile();
+
+		for (clsBankClient& C : _vClients)
+		{
+			if (C.AccountNumber() == AccountNumber())
+			{
+				C = *this;
+				break;
+			}
+
+		}
+
+		_SaveCleintsDataToFile(_vClients);
+
+	}
+
 public:
 
 	clsBankClient(enMode Mode , string FirstName, string LastName, string Email, string Phone , string AccountNumber , string PinCode , float AccountBalance)
@@ -230,6 +249,37 @@ public:
 		return _GetEmptyClientObject();
 	}
 
+  
+	enum enSaveResults { svFaildEmptyObject = 0, svSucceeded = 1 };
+
+	enSaveResults Save()
+	{
+
+		switch (_Mode)
+		{
+		case enMode::EmptyMode:
+		{
+
+			return enSaveResults::svFaildEmptyObject;
+		}
+
+		case enMode::UpdateMode:
+		{
+
+
+			_Update();
+
+			return enSaveResults::svSucceeded;
+
+			break;
+		}
+
+
+		}
+
+
+
+	}
 
 	static bool IsClientExist(string AccountNumber) {
 
