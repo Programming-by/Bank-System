@@ -5,4 +5,5 @@ C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(60,1): warning C4
 C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(197,1): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(328,1): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(376,1): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(34,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Bank System.vcxproj -> C:\Users\User\Source\Repos\Bank System\x64\Debug\Bank System.exe

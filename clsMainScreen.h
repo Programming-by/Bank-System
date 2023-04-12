@@ -4,6 +4,7 @@
 #include "clsScreen.h"
 #include "clsInputValidate.h"
 #include <iomanip>
+#include "clsClientListScreen.h"
 using namespace std;
 
 class clsMainScreen : protected clsScreen
@@ -36,7 +37,7 @@ private:
 
 	static void _ShowAllClientsScreen() {
 
-		cout << "\nClient List Screen Will be here...\n";
+		clsClientListScreen::ShowClientsList();
 
 	}
 
