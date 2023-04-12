@@ -364,4 +364,10 @@ public:
 	}
 
 
+	static vector <clsBankClient> GetClientsList() {
+
+		return _LoadClientsDataFromFile();
+	}
+
+
 };
