@@ -356,6 +356,19 @@ public:
 	}
 
 
+	void Deposit(double Amount) {
+		_AccountBalance += Amount;
+		Save();
+	}
+
+
+	void Withdraw(double Amount) {
+		_AccountBalance -= Amount;
+		Save();
+
+	}
+
+
 	static double GetTotalBalances() {
 
 		double TotalBalances = 0;
