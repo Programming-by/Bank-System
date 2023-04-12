@@ -3,6 +3,7 @@
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
 #include <iomanip>
+#include "clsUtil.h"
 
 void PrintClientRecordLine(clsBankClient Client)
 {
@@ -16,12 +17,12 @@ void PrintClientRecordLine(clsBankClient Client)
 
 }
 
-void ShowClientsList()
-{
+
+void ShowTotalBalances() {
 
     vector <clsBankClient> vClients = clsBankClient::GetClientsList();
-    
-    
+
+
     cout << "\n\t\t\t\t\tClient List (" << vClients.size() << ") Client(s).";
     cout << "\n_______________________________________________________";
     cout << "_________________________________________\n" << endl;
@@ -35,6 +36,10 @@ void ShowClientsList()
     cout << "\n_______________________________________________________";
     cout << "_________________________________________\n" << endl;
 
+
+    double TotalBalances = clsBankClient::GetTotalBalances();
+
+
     if (vClients.size() == 0)
         cout << "\t\t\t\tNo Clients Available In the System!";
     else
@@ -46,8 +51,13 @@ void ShowClientsList()
             cout << endl;
         }
 
+
     cout << "\n_______________________________________________________";
     cout << "_________________________________________\n" << endl;
+    cout << "\t\t\t\t\t   Total Balances = " << TotalBalances << endl;
+    cout << "\t\t\t\t\t   ( " << clsUtil::NumberToText(TotalBalances)  << ")";
+
+
 
 }
 
@@ -56,7 +66,7 @@ void ShowClientsList()
 int main()
 
 {
-    ShowClientsList();
+    ShowTotalBalances();
 
     system("pause>0");
     return 0;
