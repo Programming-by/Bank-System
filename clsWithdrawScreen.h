@@ -41,7 +41,7 @@ public:
 
 	static void ShowWithdrawScreen() {
 
-		_DrawScreenHeader("\t   Deposit Screen");
+		_DrawScreenHeader("\t   Withdraw Screen");
 
 		string AccountNumber = _ReadAccountNumber();
 
