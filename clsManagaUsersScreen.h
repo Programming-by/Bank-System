@@ -53,10 +53,6 @@ private:
 		cout << "\nFind User Screen Will Be Here.\n";
 	}
 
-
-
-
-
 	static void _PerformManageUsersMenueOption(enManageUsersMenueOptions ManageUsersMenueOption) {
 
 		switch (ManageUsersMenueOption) 
