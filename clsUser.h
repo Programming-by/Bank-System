@@ -160,6 +160,7 @@ public:
 
 		_Mode = Mode;
 		_UserName = UserName;
+        _Password = Password;
 		_Permissions = Permissions;
 
 	}

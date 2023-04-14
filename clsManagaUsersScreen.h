@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "clsScreen.h"
+#include "clsListUsersScreen.h"
 
 class clsManagaUsersScreen : protected clsScreen
 
@@ -30,7 +31,8 @@ private:
 	}
 
 	static void _ShowListUsersScreen() {
-		cout << "\nList Users Screen Will Be Here.\n";
+	
+		clsListUsersScreen::ShowUsersList();
 	}
 
 	static void _ShowAddNewUserScreen() {
