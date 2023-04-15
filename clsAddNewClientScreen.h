@@ -4,6 +4,8 @@
 #include "clsBankClient.h"
 #include "clsInputValidate.h"
 #include "clsScreen.h"
+#include "Global.h"
+
 
 class clsAddNewClientScreen : protected clsScreen
 {
@@ -52,6 +54,10 @@ public:
 
     static void ShowAddNewClientScreen()
     {
+
+        if (!CheckAccessRights(clsUser::pAddNewClient)) {
+            return;
+        }
 
         _DrawScreenHeader("\t  Add New Client Screen");
 

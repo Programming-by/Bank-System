@@ -4,6 +4,7 @@
 #include "clsScreen.h"
 #include "clsInputValidate.h"
 #include "clsBankClient.h"
+#include "Global.h"
 
 class clsFindClientScreen : clsScreen
 {
@@ -30,6 +31,11 @@ private:
 public:
 
 	static void ShowFindClientScreen() {
+
+        if (!CheckAccessRights(clsUser::pFindClient)) {
+
+            return;
+        }
 
         _DrawScreenHeader("\tFind Client Screen");
 

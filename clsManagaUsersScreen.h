@@ -7,6 +7,8 @@
 #include "clsDeleteUserScreen.h"
 #include "clsUpdateUserScreen.h"
 #include "clsFindUserScreen.h"
+#include "Global.h"
+
 
 class clsManagaUsersScreen : protected clsScreen
 
@@ -114,6 +116,13 @@ public:
 
 
 	static void ShowManageUsersMenue() {
+
+		if (!CheckAccessRights(clsUser::pManageUsers)) {
+
+			return;
+		}
+
+
 		system("cls");
 
 		_DrawScreenHeader("\t Manage Users Screen");

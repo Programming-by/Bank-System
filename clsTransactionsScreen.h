@@ -7,6 +7,7 @@
 #include "clsDepositScreen.h"
 #include "clsWithdrawScreen.h"
 #include "clsTotalBalancesScreen.h"
+#include "Global.h"
 
 using namespace std;
 
@@ -87,6 +88,11 @@ public:
 
 
 	static void ShowTransactionsMenue() {
+
+        if (!CheckAccessRights(clsUser::pTransactions)) {
+
+            return;
+        }
 
         system("cls");
         _DrawScreenHeader("\t  Transactions Screen");

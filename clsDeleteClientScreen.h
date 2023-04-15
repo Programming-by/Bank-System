@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include "clsScreen.h"
+#include "Global.h"
+
 
 class clsDeleteClientScreen : clsScreen
 
@@ -30,6 +32,11 @@ private:
 public:
 
 	static void ShowDeleteClientScreen() {
+        
+        if (!CheckAccessRights(clsUser::pDeleteClient)) {
+
+            return;
+        }
 
         _DrawScreenHeader("\tDelete Client Screen");
 

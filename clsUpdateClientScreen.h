@@ -3,6 +3,7 @@
 #include <iostream>
 #include "clsBankClient.h"
 #include "clsScreen.h"
+#include "Global.h"
 
 class clsUpdateClientScreen : protected clsScreen
 {
@@ -49,6 +50,11 @@ private:
 public:
 
     static void ShowUpdateClientScreen() {
+
+        if (!CheckAccessRights(clsUser::pUpdateClients)) {
+
+            return;
+        }
 
         _DrawScreenHeader("\tUpdate Client Screen");
 
