@@ -5,11 +5,13 @@ C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(60,1): warning C4
 C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(197,1): warning C4267: 'return': conversion from 'size_t' to 'short', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(328,1): warning C4267: '=': conversion from 'size_t' to 'short', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsString.h(376,1): warning C4267: 'initializing': conversion from 'size_t' to 'short', possible loss of data
+C:\Users\User\Source\Repos\Bank System\Bank System\clsUser.h(177,34): warning C4240: nonstandard extension used: access to 'clsUser::stLoginRegisterRecord' now defined to be 'public', previously it was defined to be 'private'
+C:\Users\User\Source\Repos\Bank System\Bank System\clsUser.h(24,12): message : see declaration of 'clsUser::stLoginRegisterRecord'
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(34,144): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(360,22): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(371,22): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsUtil.h(64,5): warning C4102: 'defualt': unreferenced label
 C:\Users\User\Source\Repos\Bank System\Bank System\clsTotalBalancesScreen.h(58,82): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(307): warning C4715: 'clsBankClient::Save': not all control paths return a value
-C:\Users\User\Source\Repos\Bank System\Bank System\clsUser.h(318): warning C4715: 'clsUser::Save': not all control paths return a value
+C:\Users\User\Source\Repos\Bank System\Bank System\clsUser.h(345): warning C4715: 'clsUser::Save': not all control paths return a value
   Bank System.vcxproj -> C:\Users\User\Source\Repos\Bank System\x64\Debug\Bank System.exe

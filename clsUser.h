@@ -21,6 +21,25 @@ private:
 
 	bool _MarkedForDelete = false;
 
+    struct stLoginRegisterRecord;
+
+
+    static stLoginRegisterRecord _ConvertLoginRegisterLineToRecord(string Line , string Seperator = "#//#") {
+
+        stLoginRegisterRecord LoginRegisterRecord;
+
+        vector <string> LoginRegisterDataLine = clsString::Split(Line, Seperator);
+
+        LoginRegisterRecord.DateTime = LoginRegisterDataLine[0];
+        LoginRegisterRecord.UserName = LoginRegisterDataLine[1];
+        LoginRegisterRecord.Password = LoginRegisterDataLine[2];
+        LoginRegisterRecord.Permissions = stoi(LoginRegisterDataLine[3]);
+
+
+        return LoginRegisterRecord;
+
+    }
+
 
     static clsUser _ConvertLinetoUserObject(string Line, string Seperator = "#//#")
     {
@@ -155,6 +174,14 @@ public:
 
     enum enPermissions {eAll = -1 , pListClients = 1 , pAddNewClient = 2 , pDeleteClient = 4 , pUpdateClients = 8 , pFindClient = 16 , pTransactions = 32, pManageUsers = 64};
 
+    struct stLoginRegisterRecord {
+
+        string DateTime;
+        string UserName;
+        string Password;
+        int Permissions;
+
+    };
 
 	clsUser(enMode Mode, string FirstName, string LastName, string Email, string Phone, string UserName, string Password, int Permissions)
 		: clsPerson(FirstName, LastName, Email, Phone) {
@@ -379,7 +406,7 @@ public:
          fstream MyFile;
 
 
-         MyFile.open("RegisterLogin.txt", ios::out | ios::app);
+         MyFile.open("LoginRegister.txt", ios::out | ios::app);
 
 
          if (MyFile.is_open()) {
@@ -392,9 +419,38 @@ public:
          }
 
 
-
-
      }
+
+
+     static vector <stLoginRegisterRecord>  GetLoginRegisterList() {
+
+         vector <stLoginRegisterRecord> vLoginRegisterRecord;
+
+         fstream MyFile;
+         
+         MyFile.open("LoginRegister.txt", ios::in);
+
+         string Line;
+         stLoginRegisterRecord LoginRegisterRecord;
+
+         if (MyFile.is_open()) {
+
+             while (getline(MyFile, Line)) {
+                 
+
+                 LoginRegisterRecord = _ConvertLoginRegisterLineToRecord(Line);
+                 vLoginRegisterRecord.push_back(LoginRegisterRecord);
+
+
+             }
+             MyFile.close();
+         }
+
+         return vLoginRegisterRecord;
+    }
+
+
+
 
 
 };
