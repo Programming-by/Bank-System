@@ -6,7 +6,7 @@
 #include "clsString.h"
 #include <fstream>
 #include <vector>
-
+#include "clsDate.h"
 class clsUser : public clsPerson
 {
 
@@ -166,6 +166,20 @@ public:
 		_Permissions = Permissions;
 
 	}
+
+
+    string _PrepareLogInRecord(string Seperator = "#//#") {
+
+        string LoginRecord = "";
+
+        LoginRecord += clsDate::GetSystemDateTimeString() + Seperator;
+        LoginRecord += UserName + Seperator;
+        LoginRecord += Password + Seperator;
+        LoginRecord += to_string(Permissions);
+
+        return LoginRecord;
+    }
+
 
 	bool IsEmpty() {
 
@@ -356,6 +370,31 @@ public:
             return false;
         }
     }
+
+
+     void RegisterLogIn() {
+
+         string DataLine = _PrepareLogInRecord();
+
+         fstream MyFile;
+
+
+         MyFile.open("RegisterLogin.txt", ios::out | ios::app);
+
+
+         if (MyFile.is_open()) {
+
+
+             MyFile << DataLine << endl;
+
+             MyFile.close();
+
+         }
+
+
+
+
+     }
 
 
 };

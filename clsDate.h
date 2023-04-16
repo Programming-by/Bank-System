@@ -170,7 +170,7 @@ public:
 			TotalDays += NumberOfDaysInAMonth(i, Year);
 		}
 		TotalDays += Day;
-
+		
 		return TotalDays;
 	}
 
@@ -254,6 +254,25 @@ public:
 
 		return clsDate(Day, Month, Year);
 	}
+
+
+	static string GetSystemDateTimeString() {
+
+		time_t t = time(0); // get time now
+		tm* now = localtime(&t);
+		short Day, Month, Year,Hour,Minute,Second;
+		Day = now->tm_mday;
+		Month = now->tm_mon + 1;
+		Year = now->tm_year + 1900;
+		Hour = now->tm_hour;
+		Minute = now->tm_min;
+		Second = now->tm_sec;
+
+
+		return to_string(Day) + "/" + to_string(Month) + "/" + to_string(Year) + " - " + to_string(Hour) + ":" + to_string(Minute) + ":" + to_string(Second);
+
+	}
+
 
 	static bool IsDate1BeforeDate2(clsDate Date1, clsDate Date2) {
 

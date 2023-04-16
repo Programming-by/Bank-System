@@ -25,7 +25,6 @@ protected:
         cout << "\t\t\t\t\tDate: " << clsDate::DateToString(clsDate()) << "\n\n";
 
 
-        GetCurrentUserAndCurrentDate();
     }
 
 
@@ -43,14 +42,6 @@ protected:
         }
 
    }
-
-
-    static void GetCurrentUserAndCurrentDate() {
-
-
-    }
-
-
       
 };
 
