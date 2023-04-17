@@ -355,7 +355,7 @@ public:
 		return _LoadClientsDataFromFile();
 	}
 
-
+	
 	void Deposit(double Amount) {
 		_AccountBalance += Amount;
 		Save();
@@ -371,7 +371,18 @@ public:
 		_AccountBalance -= Amount;
 		Save();
 		}
-		return true;
+
+	}
+
+
+	bool Transfer(float Amount , clsBankClient &DestinationClient) {
+
+		if (Amount > AccountBalance) {
+			return false;
+		}
+
+		Withdraw(Amount);
+		DestinationClient.Deposit(Amount);
 
 	}
 
