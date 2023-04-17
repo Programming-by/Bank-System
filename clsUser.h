@@ -216,7 +216,7 @@ public:
 		return _MarkedForDelete;
 	}
 
-	string GetUserName() {
+	 string GetUserName() {
 		return _UserName;
 	}
 
