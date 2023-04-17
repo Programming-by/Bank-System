@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "clsScreen.h"
+#include "clsUser.h"
 
 class clsLoginRegisterScreen : protected clsScreen {
 
@@ -20,6 +21,14 @@ private:
 public:
 
 	static void ShowLoginRegisterMenue() {
+
+
+        if (!CheckAccessRights(clsUser::pShowLogInRegister) ) {
+
+            return;
+        }
+
+
 
 		vector <clsUser::stLoginRegisterRecord> vLoginRegisterRecord = clsUser::GetLoginRegisterList();
 
