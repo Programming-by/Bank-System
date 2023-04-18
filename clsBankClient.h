@@ -7,6 +7,7 @@
 #include "clsString.h"
 #include <vector>
 #include "Global.h"
+#include "clsUtil.h"
 using namespace std;
 
 
@@ -52,11 +53,12 @@ private:
 		vClientData = clsString::Split(Line, Seperator);
 
 
-		return clsBankClient(enMode::UpdateMode, vClientData[0], vClientData[1], vClientData[2], vClientData[3], vClientData[4], vClientData[5], stod(vClientData[6]));
+		return clsBankClient(enMode::UpdateMode, vClientData[0], vClientData[1], vClientData[2], vClientData[3], vClientData[4],vClientData[5], stod(vClientData[6]));
 
 	}
 
 	static string _ConverClientObjectToLine(clsBankClient Client, string Seperator = "#//#") {
+
 
 
 		string stClientRecord = "";

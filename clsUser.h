@@ -7,6 +7,7 @@
 #include <fstream>
 #include <vector>
 #include "clsDate.h"
+#include "clsUtil.h"
 class clsUser : public clsPerson
 {
 
@@ -45,13 +46,16 @@ private:
         vector<string> vUserData;
         vUserData = clsString::Split(Line, Seperator);
 
+
+
         return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2],
-            vUserData[3], vUserData[4], vUserData[5], stoi(vUserData[6]));
+            vUserData[3], vUserData[4], clsUtil::Decrypt(vUserData[5],2), stoi(vUserData[6]));
 
     }
 
     static string _ConverUserObjectToLine(clsUser User, string Seperator = "#//#")
     {
+
 
         string UserRecord = "";
         UserRecord += User.FirstName + Seperator;
@@ -59,7 +63,7 @@ private:
         UserRecord += User.Email + Seperator;
         UserRecord += User.Phone + Seperator;
         UserRecord += User.UserName + Seperator;
-        UserRecord += User.Password + Seperator;
+        UserRecord += clsUtil::Encrypt(User.Password, 2) + Seperator;
         UserRecord += to_string(User.Permissions);
 
         return UserRecord;
@@ -196,11 +200,13 @@ public:
 
     string _PrepareLogInRecord(string Seperator = "#//#") {
 
+
+
         string LoginRecord = "";
 
         LoginRecord += clsDate::GetSystemDateTimeString() + Seperator;
         LoginRecord += UserName + Seperator;
-        LoginRecord += Password + Seperator;
+        LoginRecord += clsUtil::Encrypt(Password, 2) + Seperator;
         LoginRecord += to_string(Permissions);
 
         return LoginRecord;
@@ -285,6 +291,8 @@ public:
             while (getline(MyFile, Line))
             {
                 clsUser User = _ConvertLinetoUserObject(Line);
+
+
                 if (User.UserName == UserName && User.Password == Password)
                 {
                     MyFile.close();

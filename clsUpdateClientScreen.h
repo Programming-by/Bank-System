@@ -4,6 +4,7 @@
 #include "clsBankClient.h"
 #include "clsScreen.h"
 #include "Global.h"
+#include "clsUtil.h"
 
 class clsUpdateClientScreen : protected clsScreen
 {

@@ -279,4 +279,29 @@ public:
         }
     }
 
+    static  string Encrypt(string Text, short EncryptKey = 2) {
+
+
+
+        for (int i = 0; i <= Text.length(); i++)
+        {
+            Text[i] = char((int)Text[i] + EncryptKey);
+        }
+
+        return Text;
+
+    }
+
+
+    static string Decrypt(string Text, short EncryptKey = 2) {
+
+        for (int i = 0; i <= Text.length(); i++)
+        {
+            Text[i] = char((int)Text[i] - EncryptKey);
+        }
+
+        return Text;
+
+    }
+
 };
