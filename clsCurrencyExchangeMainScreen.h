@@ -2,8 +2,9 @@
 
 #include <iostream>
 #include "clsScreen.h"
+#include "clsCurrenciesListScreen.h"
 
-class clsCurrencyExchangeScreen : protected clsScreen
+class clsCurrencyExchangeMainScreen : protected clsScreen
 {
 private:
 
@@ -23,8 +24,7 @@ private:
 
 
 	static void _ShowCurrenciesListScreen() {
-
-		cout << "Currency List Screen Will be here";
+		clsCurrenciesListScreen::ShowCurrenciesListScreen();
 	}
 
 	static void _ShowFindCurrencyScreen() {

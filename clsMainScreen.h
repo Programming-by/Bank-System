@@ -82,7 +82,7 @@ private:
 	}
 
 	static void _ShowCurrencyExchangeMainScreen() {
-		clsCurrencyExchangeScreen::ShowCurrenciesMenue();
+		clsCurrencyExchangeMainScreen::ShowCurrenciesMenue();
 	}
 
 	static void _Logout() {
