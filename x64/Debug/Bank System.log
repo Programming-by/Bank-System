@@ -17,7 +17,7 @@ C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(446,22): warn
 C:\Users\User\Source\Repos\Bank System\Bank System\clsTotalBalancesScreen.h(58,82): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsCurrency.h(30,100): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(382): warning C4715: 'clsBankClient::Save': not all control paths return a value
-C:\Users\User\Source\Repos\Bank System\Bank System\clsUser.h(352): warning C4715: 'clsUser::Save': not all control paths return a value
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(450): warning C4715: 'clsBankClient::Withdraw': not all control paths return a value
 C:\Users\User\Source\Repos\Bank System\Bank System\clsBankClient.h(463): warning C4715: 'clsBankClient::Transfer': not all control paths return a value
+C:\Users\User\Source\Repos\Bank System\Bank System\clsUser.h(352): warning C4715: 'clsUser::Save': not all control paths return a value
   Bank System.vcxproj -> C:\Users\User\Source\Repos\Bank System\x64\Debug\Bank System.exe
