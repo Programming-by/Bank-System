@@ -63,7 +63,6 @@ public:
 
             _ShowResults(Currency);
 
-
         }
         else {
             string Country = "";
